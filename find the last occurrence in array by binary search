@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+int findlastOccurrenceElement(int *arr,int size , int target,int ans){
+     
+  int start = 0;
+  int end=size-1;
+  int mid=start+(end-start)/2;
+   
+
+   while(start<=end)
+  {
+     if(arr[mid]==target)
+     {
+      ans=mid; //store ans 
+      start=mid+1; //right search
+     }
+     else if(target<arr[mid])
+     {
+     
+            end=mid-1; //left search
+
+     }
+     else{
+       start=mid+1;//right search
+     }
+
+     mid=start+(end-start)/2;
+    
+  }
+  return ans;
+}
+
+int main() {
+  // cout << "Hello world!" << endl;
+  int size=8;
+  int arr[]={2,5,7,8,8,9,9,20};
+  
+  int target=8;
+  int ans=-1;
+  
+
+ 
+   ans = findlastOccurrenceElement(arr,size,target ,ans);
+  if(ans==-1)
+  {
+    cout<<"element is not present:";
+  }
+  else 
+  cout<<"element is present at index: "<<ans;
+  return 0;
+}
