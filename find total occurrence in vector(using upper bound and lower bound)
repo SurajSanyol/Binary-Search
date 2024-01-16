@@ -1,0 +1,22 @@
+#include <iostream>
+#include<algorithm>
+#include<vector>
+using namespace std;
+
+int main() {
+ 
+  vector<int>v{1,2,3,3,3,3,4,6,7,8,8,9};
+ 
+  int target = 8;
+
+  int FirstOcc = lower_bound(v.begin(),v.end(),target)-v.begin();
+  
+  int LastOcc = upper_bound(v.begin(),v.end(),target)-v.begin();
+  
+ 
+  int totalOcc = (LastOcc-FirstOcc);
+  cout<<endl;
+  cout<<"total number of occurence of Target is: "<<totalOcc;
+
+  return 0;
+}
