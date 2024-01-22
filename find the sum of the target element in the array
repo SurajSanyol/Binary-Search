@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello world!" << endl;
+  int arr[]={2,7,11,15};
+  int target =26;
+  int temp[2]={0};
+  int size = sizeof(arr)/sizeof(arr[0]);
+  for(int i=1;i<=size;i++)
+  {
+    for(int j=i+1;j<=size;j++)
+    {
+      if(arr[i-1]+arr[j-1]==target)
+      {
+       
+        temp[0]=arr[i-1];
+        temp[1]=arr[j-1];
+        
+        
+      }
+    }
+  }
+  int tempSize= sizeof(temp)/sizeof(temp[0]);
+  for(int i=0;i<tempSize;i++)
+  {
+    cout<<temp[i]<<" ";
+  }
+  return 0;
+}
+
+
+/// in this code i use the linear search for the searching the two element in the array whose some is equal to the target element;
